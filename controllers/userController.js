@@ -19,7 +19,7 @@ const userController = {
   },
   getUserById({ params }, res) {
     Users.findOne({ _id: params.id })
-      .populate({ path: "thoughts", select: "-__v" })
+      .populate({ path: "thought", select: "-__v" })
       .populate({ path: "friends", select: "-__v" })
       .select("-__v")
       .then((dbUserData) => {
@@ -52,7 +52,7 @@ const userController = {
     Users.findOneAndDelete({ _id: params.id })
       .then((dbUserData) => {
         if (!dbUserData) {
-          res.status(404).json({ message: "No User with this Id" });
+          res.status(400).json({ message: "No User with this Id" });
           return;
         }
         res.json(dbUserData);
@@ -70,7 +70,7 @@ const userController = {
       .select("-__v")
       .then((dbUserData) => {
         if (!dbUserData) {
-          res.status(404).json({ message: "No User with this Id" });
+          res.status(400).json({ message: "No User with this Id" });
           return;
         }
         res.json(dbUserData);
@@ -88,7 +88,7 @@ const userController = {
       .select("-__v")
       .then((dbUserData) => {
         if (!dbUserData) {
-          res.status(404).json({ message: "No User with this Id" });
+          res.status(400).json({ message: "No User with this Id" });
           return;
         }
         res.json(dbUserData);
