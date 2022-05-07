@@ -6,10 +6,16 @@ const userController = {
       .then((dbUserData) => res.json(dbUserData))
       .catch((err) => res.status(400).json(err));
   },
+
+  // createUser(req, res) {
+  //   Users.create(req.body)
+  //     .then((user) => res.json(user))
+  //     .catch((err) => res.status(500).json(err));
+  // },
   getAllUsers(req, res) {
     Users.find({})
-      .populate({ path: "thought", select: "-__v" })
-      .populate({ path: "friends", select: "-__v" })
+      .populate({ path: "thought", select: "-__v", strictPopulate: false })
+      .populate({ path: "friends", select: "-__v", strictPopulate: false })
       .select("-__v")
       .then((dbUserData) => res.json(dbUserData))
       .catch((err) => {
@@ -19,8 +25,8 @@ const userController = {
   },
   getUserById({ params }, res) {
     Users.findOne({ _id: params.id })
-      .populate({ path: "thought", select: "-__v" })
-      .populate({ path: "friends", select: "-__v" })
+      .populate({ path: "thought", select: "-__v", strictPopulate: false })
+      .populate({ path: "friends", select: "-__v", strictPopulate: false })
       .select("-__v")
       .then((dbUserData) => {
         if (!dbUserData) {
