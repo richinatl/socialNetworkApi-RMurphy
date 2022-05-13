@@ -17,6 +17,14 @@
 
 A backend application featuring mongoose and node.js to be used as a foundation to build a full social networking application
 
+![socialApiDemo1](https://user-images.githubusercontent.com/95508564/168397240-96ba613e-edc0-4eeb-b7c1-c514a37d22ee.png)
+
+![socialApiDemo2](https://user-images.githubusercontent.com/95508564/168397270-47d1e58e-4bf2-4e02-9e2e-38360181e3d5.png)
+
+There is a video of the routes being tested in Insomnia here: https://watch.screencastify.com/v/V8F6hxQtIAHQEInhvfbz
+
+
+
 ## Installation
 
 npm i to install dependencies, then npm start to initialize application
@@ -31,7 +39,7 @@ This is the backend only, but you can fork this repo and test it with Insomnia o
 
 ## Contributors
 
-undefined
+None at this time, contact me if you wish to do so
 
 ## Technologies
 
